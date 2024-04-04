@@ -1,0 +1,55 @@
+.dropdown {
+    position: relative;
+}
+
+.dropBtn {
+    position: static;
+    cursor: pointer;
+    margin-bottom: 32px;
+    width: 226px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    border: none;
+    border-radius: 14px;
+    background: var(--primary-color-green);
+    color: var(--secondary-color-white);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.list {
+    padding: 14px 18px;
+    position: absolute;
+    z-index: 100;
+    width: 226px;
+    left: 0px;
+    right: 871px;
+    top: 59px;
+    border-radius: 14px;
+    box-shadow: 0px 20px 69px 0px rgba(0, 0, 0, 0.07);
+    background: rgb(255, 255, 255);
+}
+
+.list li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.list li {
+    cursor: pointer;
+    color: rgba(25, 26, 21, 0.3);
+    transition: all 300ms;
+
+    &:hover {
+        color: var(--secondary-color-black);
+
+    }
+}
+
+.rotatedIcon {
+    transform: rotate(180deg);
+}

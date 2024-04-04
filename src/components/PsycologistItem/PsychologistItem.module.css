@@ -1,0 +1,174 @@
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+    padding: 24px;
+    margin: 0 auto;
+    border-radius: 24px;
+    background: var(--secondary-color-white);
+
+
+    @media screen and (min-width: 1000px) {
+        flex-wrap: nowrap;
+    }
+}
+
+.imgBorder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    min-width: 120px;
+    border: 2px solid rgba(84, 190, 150, 0.2);
+    border-radius: 30px;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 9px;
+        height: 9px;
+        left: 92px;
+        top: 7px;
+        border-radius: 50%;
+        background-color: rgb(56, 205, 62);
+        border: 3px solid white
+    }
+}
+
+
+.itemImage {
+    border-radius: 15px;
+    height: 96px;
+    width: 96px;
+}
+
+
+.headWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    gap: 8px;
+    align-items: center;
+
+    @media screen and (min-width: 1440px) {
+        flex-wrap: nowrap;
+    }
+}
+
+.itemTitle {
+    margin-right: 540px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--secondary-color-gray);
+}
+
+.listStatWrapper {
+    display: flex;
+    margin-right: auto;
+    width: 100%;
+}
+
+.itemData {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--secondary-color-black);
+
+    &:first-child::after {
+        content: '';
+        vertical-align: middle;
+        display: inline-block;
+        width: 1px;
+        height: 16px;
+        margin: 0 16px 0 12px;
+        background-color: rgba(25, 26, 21, 0.2);
+
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 415px) {
+        font-size: 12px;
+        gap: 0px;
+
+        &:first-child::after {
+            margin: 0 7px 0 7px;
+        }
+    }
+
+    @media screen and (min-width: 430px) {
+        &:last-child {
+            margin-left: 14px;
+        }
+    }
+}
+
+.priceSpan {
+    color: rgb(56, 205, 62);
+}
+
+.btnHeart {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.heartIcon {
+    @media screen and (min-width: 320px) and (max-width: 415px) {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.itemName {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--secondary-color-black);
+}
+
+.infoWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    column-gap: 4px;
+    margin-bottom: 24px;
+}
+
+.itemMainData {
+    display: inline-block;
+    padding: 8px 16px 8px 16px;
+
+    border-radius: 24px;
+    background-color: rgb(243, 243, 243);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--secondary-color-black);
+}
+
+.spanItem {
+    color: var(--secondary-color-gray);
+}
+
+.itemAbout {
+    margin-bottom: 14px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: rgba(25, 26, 21, 0.5);
+}
+
+.readMoreBtn {
+    padding: 0;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--secondary-color-black);
+    text-decoration-line: underline;
+}

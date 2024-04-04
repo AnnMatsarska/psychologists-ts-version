@@ -1,0 +1,206 @@
+.appFormContainer {
+    width: 100%;
+    max-width: 472px;
+
+    @media only screen and (max-width: 550px) {
+        max-width: 240px;
+    }
+}
+
+.formTitle {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    @media only screen and (max-width: 550px) {
+        font-size: 34px;
+    }
+}
+
+.formText {
+    margin-bottom: 40px;
+    color: rgba(25, 26, 21, 0.5);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+
+    @media only screen and (max-width: 550px) {
+        font-size: 12px;
+    }
+}
+
+.itemText {
+    margin-bottom: 4px;
+    color: var(--secondary-color-gray);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.33;
+}
+
+.formItemName {
+    color: var(--secondary-color-black);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--secondary-color-black);
+    border: none;
+    background-color: inherit;
+
+    &:focus {
+        outline: none;
+    }
+
+    @media only screen and (max-width: 550px) {
+        font-size: 12px;
+    }
+}
+
+.errormessage {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    color: red;
+    font-size: 14px;
+
+    @media only screen and (max-width: 550px) {
+        font-size: 9px;
+        bottom: -10px;
+    }
+}
+
+.inputWrapper {
+    display: flex;
+    position: relative;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    height: 52px;
+    padding: 16px 18px;
+    border: 1px solid rgba(25, 26, 21, 0.1);
+    border-radius: 12px;
+    background-color: inherit;
+
+    @media only screen and (max-width: 550px) {
+        padding: 16px 8px;
+    }
+}
+
+.inputError {
+    border: 1px solid red;
+}
+
+
+.buttonForm {
+    display: inline-block;
+    width: 100%;
+    margin-top: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-color-green);
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    cursor: pointer;
+    text-align: center;
+    color: var(--secondary-color-white);
+
+    transition: all 300ms;
+
+    &:hover,
+    &:focus {
+        background-color: var(--secondary-color-green);
+    }
+
+}
+
+.timeDropdownHeader {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.timeDropdown {
+    padding: 16px;
+
+    position: absolute;
+    z-index: 100;
+    width: 151px;
+    left: 80px;
+    top: 60px;
+
+    max-height: 180px;
+    overflow-y: auto;
+
+    border-radius: 14px;
+    box-shadow: 0px 20px 69px 0px rgba(0, 0, 0, 0.07);
+    background: rgb(255, 255, 255);
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    @media only screen and (max-width: 550px) {
+        width: 140px;
+        left: 0px;
+        top: 60px;
+        font-size: 12px;
+    }
+}
+
+.timeSpan {
+    @media only screen and (max-width: 550px) {
+        font-size: 12px;
+    }
+}
+
+.timeDropdownList {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timeOption {
+    display: flex;
+    text-align: center;
+
+    color: rgba(25, 26, 21, 0.3);
+    cursor: pointer;
+    line-height: 1.7;
+
+    &:hover {
+        color: var(--secondary-color-black);
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 4px;
+    }
+}
+
+.time {
+    width: 38px;
+    height: 24px;
+}
