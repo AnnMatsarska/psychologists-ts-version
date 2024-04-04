@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
-import css from './ItemMoreInfo.module.css';
-import { v4 as uuidv4 } from 'uuid';
-import { ReactComponent as Star } from '../../../images/star.svg';
-import Modal from '../../Modal/Modal';
-import { AppointmentForm } from '../../AppointmentForm/AppointmentForm';
+import React, { useState } from "react";
+import css from "./ItemMoreInfo.module.css";
+import { v4 as uuidv4 } from "uuid";
+import { ReactComponent as Star } from "../../../images/star.svg";
+import Modal from "../../Modal/Modal";
+import { AppointmentForm } from "../../AppointmentForm/AppointmentForm";
+import { IPsychologist } from "../../../@types/types";
 
-export const ItemMoreInfo = ({ psychologist }) => {
+interface ItemProps {
+  psychologist: IPsychologist;
+}
+
+export const ItemMoreInfo: React.FC<ItemProps> = ({ psychologist }) => {
   const { reviews } = psychologist;
   const [isOpen, setTeamModalOpen] = useState(false);
 
   const openModal = () => {
     setTeamModalOpen(true);
-    document.body.classList.add('body-scroll-lock');
+    document.body.classList.add("body-scroll-lock");
   };
 
   const closeModal = () => {
     setTeamModalOpen(false);
-    document.body.classList.remove('body-scroll-lock');
+    document.body.classList.remove("body-scroll-lock");
   };
 
   return (
     <div>
       <ul className={css.list}>
-        {reviews.map(review => (
+        {reviews.map((review) => (
           <li key={uuidv4()}>
             <div className={css.reviewBox}>
               <p className={css.reviewerLetterName}>{review.reviewer[0]}</p>

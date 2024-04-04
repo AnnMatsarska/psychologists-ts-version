@@ -1,21 +1,29 @@
-import { useState } from 'react';
-import css from './AppointmentForm.module.css';
-import { generateTimeOptions } from '../../services/timeOptions';
-import { ReactComponent as Clock } from '../../images/clock.svg';
+import React, { useState } from "react";
+import css from "./AppointmentForm.module.css";
+import { generateTimeOptions } from "../../services/timeOptions";
+import { ReactComponent as Clock } from "../../images/clock.svg";
+import { useFormikContext } from "formik";
 
-export const CustomTimeField = ({ field, form }) => {
+interface CustomTimeFieldProps {
+  field: {
+    name: string;
+  };
+}
+
+export const CustomTimeField: React.FC<CustomTimeFieldProps> = ({ field }) => {
+  const { setFieldValue } = useFormikContext();
   const [showTimeDropdown, setShowTimeDropdown] = useState(false);
-  const [selectedTime, setSelectedTime] = useState('');
+  const [selectedTime, setSelectedTime] = useState("");
   const timeOptions = generateTimeOptions();
 
-  const handleTimeSelect = time => {
+  const handleTimeSelect = (time: string) => {
     setSelectedTime(time);
-    form.setFieldValue(field.name, time);
+    setFieldValue(field.name, time);
     setShowTimeDropdown(false);
   };
 
-  const formatTime = time => {
-    const [hours, minutes] = time.split(':');
+  const formatTime = (time: string) => {
+    const [hours, minutes] = time.split(":");
     return { hours, minutes };
   };
 
@@ -24,7 +32,7 @@ export const CustomTimeField = ({ field, form }) => {
       <div
         className={css.timeDropdownHeader}
         onClick={() => setShowTimeDropdown(!showTimeDropdown)}
-        type="button"
+        role="button"
       >
         {selectedTime ? (
           <div>
@@ -39,9 +47,9 @@ export const CustomTimeField = ({ field, form }) => {
       {showTimeDropdown && (
         <>
           <div className={css.timeDropdown}>
-            <p style={{ marginBottom: '16px' }}>Meeting time</p>
+            <p style={{ marginBottom: "16px" }}>Meeting time</p>
             <ul className={css.timeDropdownList}>
-              {timeOptions.map(time => (
+              {timeOptions.map((time) => (
                 <li
                   key={time}
                   className={css.timeOption}
@@ -58,3 +66,5 @@ export const CustomTimeField = ({ field, form }) => {
     </>
   );
 };
+
+export default CustomTimeField;

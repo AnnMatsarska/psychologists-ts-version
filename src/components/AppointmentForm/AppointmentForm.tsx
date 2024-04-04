@@ -1,37 +1,46 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as yup from 'yup';
+import React from "react";
+import css from "./AppointmentForm.module.css";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as yup from "yup";
+import { toast } from "react-toastify";
+import { IPsychologist } from "../../@types/types";
+import { CustomTimeField } from "./CustomTimeField";
 
-import css from './AppointmentForm.module.css';
-import { CustomTimeField } from './CustomTimeField';
+interface FormProps {
+  psychologist: IPsychologist;
+  onClose: () => void;
+}
 
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-export const AppointmentForm = ({ psychologist, onClose }) => {
+export const AppointmentForm: React.FC<FormProps> = ({
+  psychologist,
+  onClose,
+}) => {
   const initialValues = {
-    name: '',
-    number: '',
-    time: '',
-    email: '',
-    comment: '',
+    name: "",
+    number: "",
+    time: "",
+    email: "",
+    comment: "",
   };
+
   const phoneRegExp = /^\+380\d{9}$/;
 
   const validationSchema = yup.object({
     name: yup.string().required(),
     number: yup
       .string()
-      .matches(phoneRegExp, 'Phone number is not valid')
+      .matches(phoneRegExp, "Phone number is not valid")
       .required(),
     time: yup.string().required(),
-    email: yup.string().email('Invalid email').required(),
+    email: yup.string().email("Invalid email").required(),
     comment: yup.string().required(),
   });
 
   const handleSubmit = () => {
-    toast.success('Appointment with psychologist confirmed!');
+    toast.success("Appointment with psychologist confirmed!");
     onClose();
   };
+
   return (
     <div className={css.appFormContainer}>
       <h3 className={css.formTitle}>
@@ -42,13 +51,13 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
         short form below to book your personal appointment with a professional
         psychologist. We guarantee confidentiality and respect for your privacy.
       </p>
-      <div style={{ display: 'flex', gap: '14px', marginBottom: '40px' }}>
+      <div style={{ display: "flex", gap: "14px", marginBottom: "40px" }}>
         <img
           src={psychologist.avatar_url}
           alt={psychologist.name}
           width="44px"
           height="44px"
-          style={{ borderRadius: '15px' }}
+          style={{ borderRadius: "15px" }}
         />
         <div>
           <p className={css.itemText}>Your psychologists</p>
@@ -66,7 +75,7 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
               <div className={css.wrapper}>
                 <div
                   className={`${css.inputWrapper} ${
-                    errors.name && touched.name ? css.inputError : ''
+                    errors.name && touched.name ? css.inputError : ""
                   }`}
                 >
                   <Field
@@ -83,11 +92,11 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
                   className={css.errormessage}
                 />
               </div>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <div className={css.wrapper} style={{ width: '232px' }}>
+              <div style={{ display: "flex", gap: "8px" }}>
+                <div className={css.wrapper} style={{ width: "232px" }}>
                   <div
                     className={`${css.inputWrapper} ${
-                      errors.number && touched.number ? css.inputError : ''
+                      errors.number && touched.number ? css.inputError : ""
                     }`}
                   >
                     <Field
@@ -104,17 +113,13 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
                     className={css.errormessage}
                   />
                 </div>
-                <div className={css.wrapper} style={{ width: '232px' }}>
+                <div className={css.wrapper} style={{ width: "232px" }}>
                   <div
                     className={`${css.inputWrapper} ${
-                      errors.time && touched.time ? css.inputError : ''
+                      errors.time && touched.time ? css.inputError : ""
                     }`}
                   >
-                    <Field name="time">
-                      {({ field, form }) => (
-                        <CustomTimeField field={field} form={form} />
-                      )}
-                    </Field>
+                    <Field name="time" component={CustomTimeField} />
                   </div>
                   <ErrorMessage
                     name="time"
@@ -126,7 +131,7 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
               <div className={css.wrapper}>
                 <div
                   className={`${css.inputWrapper} ${
-                    errors.email && touched.email ? css.inputError : ''
+                    errors.email && touched.email ? css.inputError : ""
                   }`}
                 >
                   <Field
@@ -145,9 +150,9 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
               </div>
               <div className={css.wrapper}>
                 <div
-                  style={{ height: '116px' }}
+                  style={{ height: "116px" }}
                   className={`${css.inputWrapper} ${
-                    errors.email && touched.email ? css.inputError : ''
+                    errors.email && touched.email ? css.inputError : ""
                   }`}
                 >
                   <Field
@@ -175,3 +180,5 @@ export const AppointmentForm = ({ psychologist, onClose }) => {
     </div>
   );
 };
+
+export default AppointmentForm;

@@ -14,8 +14,13 @@ import { selectUser } from "../../redux/auth/authSlice";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { IPsychologist } from "../../@types/types";
 
-export const PsychologistItem = ({ psychologist }) => {
+interface Props {
+  psychologist: IPsychologist;
+}
+
+export const PsychologistItem: React.FC<Props> = ({ psychologist }) => {
   const dispatch = useDispatch();
   const [isFavorite, setIsFavorite] = useState(false);
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);

@@ -1,6 +1,6 @@
-import css from './PsychologistList.module.css';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import css from "./PsychologistList.module.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   selectPsychologists,
   selectCurrentPage,
@@ -8,14 +8,15 @@ import {
   selectFilter,
   nextPage,
   resetState,
-} from '../../redux/psychologists/slice';
-import { fetchPsychologists } from '../../redux/psychologists/actions';
-import { applyFilter } from '../../services/applyFilter';
+} from "../../redux/psychologists/slice";
+import { fetchPsychologists } from "../../redux/psychologists/actions";
+import { AppDispatch } from "../../redux/store";
+import { applyFilter } from "../../services/applyFilter";
 
-import { PsychologistItem } from '../PsycologistItem/PsychologistItem';
+import { PsychologistItem } from "../PsycologistItem/PsychologistItem";
 
 export const PsychologistList = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const psychologists = useSelector(selectPsychologists);
   const currentPage = useSelector(selectCurrentPage);
   const itemsPerPage = useSelector(selectItemsPerPage);
@@ -48,7 +49,7 @@ export const PsychologistList = () => {
     <>
       {displayPsychologists.length !== 0 ? (
         <ul className={css.list}>
-          {displayPsychologists.map(psychologist => (
+          {displayPsychologists.map((psychologist) => (
             <PsychologistItem
               key={psychologist.id}
               psychologist={psychologist}
