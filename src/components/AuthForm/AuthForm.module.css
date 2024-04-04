@@ -1,0 +1,106 @@
+.formDiv {
+    width: 100%;
+    max-width: 439px;
+
+    @media only screen and (max-width: 550px) {
+        max-width: 240px;
+    }
+}
+
+.formTitle {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.formText {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 40px;
+    color: rgba(25, 26, 21, 0.5);
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--secondary-color-black);
+    border: none;
+    background-color: inherit;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.errormessage {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    color: red;
+    font-size: 14px;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    height: 52px;
+    padding: 16px 18px;
+    border: 1px solid rgba(25, 26, 21, 0.1);
+    border-radius: 12px;
+    background-color: inherit;
+}
+
+.inputError {
+    border: 1px solid red;
+}
+
+.eyeIcon {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+
+.buttonForm {
+    display: inline-block;
+    width: 100%;
+    margin-top: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--primary-color-green);
+    padding: 16px 0;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    cursor: pointer;
+    text-align: center;
+    color: var(--secondary-color-white);
+
+    transition: all 300ms;
+
+    &:hover,
+    &:focus {
+        background-color: var(--secondary-color-green);
+    }
+}

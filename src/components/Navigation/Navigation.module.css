@@ -1,0 +1,47 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @media screen and (min-width: 1245px) {
+        margin-left: -130px;
+    }
+
+
+}
+
+.listLoggedIn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 0;
+
+    @media screen and (min-width: 580px) {
+        gap: 40px;
+    }
+
+}
+
+.linkItem {
+    position: relative;
+    font-weight: 400;
+    color: var(--secondary-color-black);
+}
+
+.linkItem:hover::after,
+.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 120%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color-green);
+}
+
+.active {
+    color: var(--secondary-color-black);
+    position: relative;
+}

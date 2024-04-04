@@ -1,0 +1,41 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 24px;
+
+    @media screen and (max-width: 768px) {
+        gap: 10px;
+    }
+}
+
+.linkItem {
+    padding: 14px 39px;
+    background-color: transparent;
+    border: 1px solid rgba(25, 26, 21, 0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--secondary-color-black);
+    transition: all 300ms;
+
+    &:hover,
+    &:focus {
+        border: 1px solid transparent;
+        background-color: var(--primary-color-green);
+        color: var(--secondary-color-white);
+    }
+}
+
+.active {
+    padding: 14px 39px;
+    background-color: var(--primary-color-green);
+    border-radius: 30px;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--secondary-color-white);
+}
