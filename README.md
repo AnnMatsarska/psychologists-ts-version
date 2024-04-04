@@ -1,6 +1,6 @@
 # "Psychologists.Services" - The road to the depths of the human soul
 
-**This is the the version of the project written in TypeScript.**
+**This is the TypeScript version of the project.**
 
 **You can find the JavaScript version**
 [here](https://github.com/AnnMatsarska/psychologists-ts-version)
