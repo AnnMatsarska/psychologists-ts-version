@@ -1,11 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-
-interface CurrentUser {
-  email: string;
-  id: string;
-  name: string;
-}
+import { CurrentUser } from "../../@types/types";
 
 interface User {
   currentUser: CurrentUser | null;

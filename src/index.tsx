@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <BrowserRouter>
+      <BrowserRouter basename="/psychologists-ts-version">
         <App />
       </BrowserRouter>
     </PersistGate>

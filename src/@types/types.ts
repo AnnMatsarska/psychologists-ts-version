@@ -16,6 +16,8 @@ export interface IPsychologist {
   about: string;
 }
 
-export interface User {
-  currentUser: any | null;
+export interface CurrentUser {
+  email: string;
+  id: string;
+  name: string;
 }
