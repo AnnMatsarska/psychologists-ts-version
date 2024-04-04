@@ -2,7 +2,7 @@ import { PsychologistList } from "../../components/PsychologistList/Psychologist
 import css from "./PsychologistPage.module.css";
 import { Filter } from "../../components/Filter/Filter";
 
-// import { ScrollUp } from '../../components/ScrollUp/ScrollUp';
+import { ScrollUp } from "../../components/ScrollUp/ScrollUp";
 
 const PsychologistPage = () => {
   return (
@@ -10,20 +10,10 @@ const PsychologistPage = () => {
       <div className="container">
         <Filter />
         <PsychologistList />
-        {/* <ScrollUp /> */}
+        <ScrollUp />
       </div>
     </section>
   );
 };
-
-// const PsychologistPage = () => {
-//   return (
-//     <section className={css.section}>
-//       <div className="container">
-//         <h1>Helooo</h1>
-//       </div>
-//     </section>
-//   );
-// };
 
 export default PsychologistPage;

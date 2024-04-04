@@ -1,0 +1,18 @@
+.scrollUp {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    transform: rotate(180deg);
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color-green);
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
