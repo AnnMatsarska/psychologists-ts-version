@@ -7,7 +7,7 @@
 .logoLink {
     display: none;
 
-    @media screen and (min-width: 840px) {
+    @media screen and (min-width: 875px) {
         display: block;
         font-weight: 600;
         font-size: 20px;
