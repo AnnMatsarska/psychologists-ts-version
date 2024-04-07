@@ -14,7 +14,7 @@ export const SharedLayout = () => {
         <AppBar />
         <ToastContainer
           position="top-center"
-          autoClose={2000}
+          autoClose={2500}
           hideProgressBar={true}
         />
         <main>
