@@ -152,7 +152,7 @@ export const AppointmentForm: React.FC<FormProps> = ({
                 <div
                   style={{ height: "116px" }}
                   className={`${css.inputWrapper} ${
-                    errors.email && touched.email ? css.inputError : ""
+                    errors.comment && touched.comment ? css.inputError : ""
                   }`}
                 >
                   <Field
