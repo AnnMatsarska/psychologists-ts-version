@@ -35,8 +35,6 @@ code {
   margin: 0 auto;
   min-width: 320px;
   max-width: 1440px;
-  /* padding: 0px 18px; */
-  /* padding: 0px calc(40px + (128 - 40) * ((100vw - 320px) / (1440 - 320))); */
   padding: 0px calc(18px + (128 - 18) * ((100vw - 320px) / (1440 - 320)));
 
 
